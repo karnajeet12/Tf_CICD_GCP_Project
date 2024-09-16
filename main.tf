@@ -11,3 +11,5 @@ resource "google_storage_bucket" "auto-expire" {
   project = "erudite-azimuth-432615-c1"
   public_access_prevention = "enforced"
 }
+
+#
