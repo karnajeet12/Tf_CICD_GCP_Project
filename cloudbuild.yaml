@@ -2,7 +2,6 @@ steps:
  - id: 'Branch name'
    name: 'alpine'
    entrypoint: 'sh'
-   logging: NONE
    args:
    - '-c'
    - |
@@ -11,7 +10,6 @@ steps:
  - id: 'tf init'
    name: 'hashicorp/terraform:1.0.0'
    entrypoint: 'sh'
-   logging: NONE
    args:
    - '-c'
    - |
@@ -20,7 +18,6 @@ steps:
  - id: 'tf plan'
    name: 'hashicorp/terraform:1.0.0'
    entrypoint: 'sh'
-   logging: NONE
    args:
    - '-c'
    - |
@@ -29,11 +26,10 @@ steps:
  - id: 'tf apply'
    name: 'hashicorp/terraform:1.0.0'
    entrypoint: 'sh'
-   logging: NONE
    args:
    - '-c'
    - |
-       if [["$BRANCH_NAME" == "prod"]]; then
+       if ["$BRANCH_NAME" == "prod"]; then
          echo "Branch is 'prod', proceeding with terraform apply."
          terraform apply --auto-approve
          exit 0
