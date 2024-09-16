@@ -5,7 +5,7 @@ provider "google" {
 }
 
 resource "google_storage_bucket" "auto-expire" {
-  name          = "CICD-bucket"
+  name          = "cicd-bucket"
   location      = "US"
   force_destroy = true
   project = "erudite-azimuth-432615-c1"
